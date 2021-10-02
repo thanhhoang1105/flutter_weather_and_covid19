@@ -1,6 +1,6 @@
 # ggmap
 
-A new Flutter project.
+flutter project on weather search and statistics of Covid19 cases
 
 ## Getting Started
 
