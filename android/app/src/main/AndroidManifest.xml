@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ggmap">
 	<uses-permission android:name="android.permission.INTERNET" />
-   <application
-        android:label="ggmap"
+   	<application
+        android:label="Weather and Covid"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

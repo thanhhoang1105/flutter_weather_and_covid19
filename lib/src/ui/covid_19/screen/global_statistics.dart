@@ -35,7 +35,7 @@ class GlobalStatistics extends StatelessWidget {
           "Tổng Số Ca Chết",
           summary?.deaths ?? 0,
           summary?.todayDeaths ?? 0,
-          kRecoveredColor,
+          kDeathColor,
         ),
       ],
     );

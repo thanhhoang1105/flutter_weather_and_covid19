@@ -7,8 +7,9 @@ class CovidService {
   var data = [];
   List<CountryModel> results = [];
 
-  String urlAll = "https://corona.lmao.ninja/v2/all";
-  String urlCountry = "https://corona.lmao.ninja/v2/countries";
+  String urlAll = "https://disease.sh/v3/covid-19/all";
+  String urlCountry = "https://disease.sh/v3/covid-19/countries";
+  String urlCity = "http://static.pipezero.com/covid/data.json";
 
   Future<GlobalSummaryModel> getGlobalSummary() async {
     final response = await http.get(Uri.parse(urlAll));
@@ -21,8 +22,8 @@ class CovidService {
   }
 
   static Future<List<CountryModel>> getCountrySummary(String query) async {
-    final response = await http.Client()
-        .get(Uri.parse("https://corona.lmao.ninja/v2/countries"));
+    final response =
+        await http.get(Uri.parse("https://disease.sh/v3/covid-19/countries"));
     if (response.statusCode == 200) {
       // print(response.body);
       final List summaryList = json.decode(response.body);
@@ -45,6 +46,17 @@ class CovidService {
     if (response.statusCode == 200) {
       List countries = json.decode(response.body);
       return countries.map((e) => CountryModel.fromJson(e)).toList();
+    } else {
+      throw Exception('Unexpected error occured!');
+    }
+  }
+
+  Future<List<CountryModel>> getCityList() async {
+    final response = await http.Client().get(Uri.parse(urlCity));
+
+    if (response.statusCode == 200) {
+      List city = json.decode(response.body);
+      return city.map((e) => CountryModel.fromJson(e)).toList();
     } else {
       throw Exception('Unexpected error occured!');
     }

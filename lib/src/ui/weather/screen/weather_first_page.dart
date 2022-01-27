@@ -39,7 +39,7 @@ class _WeatherFirstPageState extends State<WeatherFirstPage> {
         long = position.longitude.toString();
       });
       http.Response response = await http.get(Uri.parse(
-          "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&units=metric&appid=15044dc8c956cfb4fb12da54b2bb5c2c"));
+          "http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&units=metric&lang=vi&appid=15044dc8c956cfb4fb12da54b2bb5c2c"));
 
       var results = jsonDecode(response.body);
 
@@ -115,7 +115,7 @@ class _WeatherFirstPageState extends State<WeatherFirstPage> {
                                     borderSide: BorderSide(
                                         color: Colors.black, width: 2.0),
                                   ),
-                                  hintText: 'Enter City',
+                                  hintText: 'Nhập Thành Phố',
                                   suffixIcon: IconButton(
                                     icon:
                                         Icon(Icons.search, color: Colors.black),

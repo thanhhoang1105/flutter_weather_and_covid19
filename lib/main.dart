@@ -6,17 +6,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AppMulti',
+      title: 'Weather & Covid',
       theme: ThemeData(
           textTheme: Theme.of(context).textTheme.apply(
-            // bodyColor: Colors.white,
-            // displayColor: Colors.blue,
-          )
-      ),
+              // bodyColor: Colors.white,
+              // displayColor: Colors.blue,
+              )),
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );

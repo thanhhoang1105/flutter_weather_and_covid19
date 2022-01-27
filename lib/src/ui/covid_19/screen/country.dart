@@ -25,7 +25,7 @@ class _CountryState extends State<Country> {
 
     countryList = covidService.getCountryList();
 
-    // this._typeAheadController.text = "Vietnam";
+    this._typeAheadController.text = "Vietnam";
     summaryList = covidService.getCountryList();
   }
 
